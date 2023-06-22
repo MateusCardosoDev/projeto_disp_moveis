@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.AppCompat.Button.Colored"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:padding="5dip">
 
     <TextView
-        android:id="@+id/text_nome_produto"
+        style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+        android:id="@+id/nome_produto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:fontFamily="sans-serif-black"
-        android:text="KIDS"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:paddingStart="@dimen/activity_horizontal_margin"/>
 
     <TextView
-        android:id="@+id/text_descricao_produto"
+        style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+        android:id="@+id/descricao_produto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Carne e queijo" />
+        android:layout_below="@id/nome_produto"
+        android:fontFamily="sans-serif-black"
+        android:textSize="11sp"
+        android:textStyle="normal"
+        android:paddingStart="@dimen/activity_horizontal_margin"/>
 
     <TextView
+        style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
         android:id="@+id/text_valor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="R$12,00" />
-</LinearLayout>
+        android:layout_below="@id/descricao_produto"
+        android:layout_marginTop="10dip"
+        android:fontFamily="sans-serif-black"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:paddingStart="@dimen/activity_vertical_margin"/>
+
+</RelativeLayout>

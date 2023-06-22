@@ -7,5 +7,10 @@
     <string name="entrega"><b>ENTREGA</b>\n35min - 50min</string>
     <string name="retirada"><b>RETIRADA</b>\n30min</string>
     <string name="classic_burgers">Classic Burgers</string>
+    <string name="special_burgers">Special Burgers</string>
+    <string name="drinks">Bebidas</string>
+    <string name="add">Adicionar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="title_activity_carrinho">CarrinhoActivity</string>
 
 </resources>
