@@ -18,13 +18,14 @@ import br.com.cardosobritzburger.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private Carrinho carrinho = new Carrinho();
     private FloatingActionButton btnCarrinho;
     private BottomNavigationView navView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        RealmUtil.dataBaseInit(this);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnCarrinho.setOnClickListener(v -> {
             Intent intent = new Intent(this, CarrinhoActivity.class);
-            intent.putExtra("carrinho", carrinho);
             startActivity(intent);
         });
 
@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
         layout.addView(convertView);
     }
 
-    private void adicionaNoCarrinho(Produto produto){
-        carrinho.getProdutos().add(produto);
+    private void adicionaNoCarrinho(Produto produto) {
+        Carrinho.getInstance().getProdutos().add(produto);
         btnCarrinho.setVisibility(View.VISIBLE);
     }
 

@@ -1,15 +1,16 @@
 package br.com.cardosobritzburger;
 
-import java.io.Serializable;
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
-public class Produto implements Serializable {
+public class Produto extends RealmObject {
 
+    @PrimaryKey
+    private Integer id;
     private String nome;
     private String descricao;
     private String textoValor; //"R$12,00"
     private Double valor; // a ser usado no carrinho
-    private int quantidade; // a ser usado no carrinho
-    private String observacao; // a ser usado no carrinho
 
     public Produto(String nome, String descricao, String textoValor, Double valor) {
         this.nome = nome;
@@ -19,6 +20,14 @@ public class Produto implements Serializable {
     }
 
     public Produto() {    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -50,26 +59,5 @@ public class Produto implements Serializable {
 
     public void setValor(Double valor) {
         this.valor = valor;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public String getObservacao() {
-        return observacao;
-    }
-
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
-    }
-
-    @Override
-    public String toString() {
-        return "<b>" + nome + "<\\b>\n" + descricao + "\n" + valor;
     }
 }

@@ -10,7 +10,9 @@
     <string name="special_burgers">Special Burgers</string>
     <string name="drinks">Bebidas</string>
     <string name="add">Adicionar</string>
+    <string name="remover">Remover</string>
     <string name="cancelar">Cancelar</string>
     <string name="title_activity_carrinho">CarrinhoActivity</string>
+    <string name="ok">Ok</string>
 
 </resources>
