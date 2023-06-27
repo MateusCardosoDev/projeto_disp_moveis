@@ -60,4 +60,9 @@ public class Produto extends RealmObject {
     public void setValor(Double valor) {
         this.valor = valor;
     }
+
+    @Override
+    public String toString() {
+        return nome + '(' + textoValor + ')';
+    }
 }

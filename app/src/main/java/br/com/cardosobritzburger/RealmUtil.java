@@ -31,14 +31,18 @@ public class RealmUtil {
 
     public static void insert(Pedido pedido){
         Number maxId = realm.where(Pedido.class).max("id"); //pegar o id de maior valor dos pedidos
+        Double totalPedido = 0.0;
         int id = maxId == null ? 1 : maxId.intValue() + 1;
         pedido.setId(id);
         maxId = realm.where(Produto.class).max("id"); //pegar o id de maior valor dos produtos
         id = maxId == null ? 0 : maxId.intValue();
-        for(Produto produto : pedido.getProdutos()){
+        for(int i = 0; i < pedido.getProdutos().size(); i++){
+            Produto produto = pedido.getProdutos().get(i);
             produto.setId(id + 1);
             id = id + 1;
+            totalPedido += produto.getValor();
         }
+        pedido.setTotal("R$"+totalPedido);
         realm.beginTransaction();
         realm.insert(pedido);
         realm.commitTransaction();

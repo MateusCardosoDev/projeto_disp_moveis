@@ -11,6 +11,7 @@ public class Pedido extends RealmObject {
     private RealmList<Produto> produtos;
     private String data;
     private String endereco;
+    private String total;
 
     public Pedido() {
     }
@@ -45,5 +46,13 @@ public class Pedido extends RealmObject {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
     }
 }
